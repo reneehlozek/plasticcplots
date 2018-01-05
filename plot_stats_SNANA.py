@@ -16,7 +16,9 @@ settings = configparser.ConfigParser()
 settings._interpolation = configparser.ExtendedInterpolation()
 
 try:
+
     inifile=sys.argv[1]
+    root = sys.argv[2]
     print 'Reading inifile: %s '%inifile
 except:
     print 'you need to specify an ini file'
@@ -24,7 +26,7 @@ except:
 
 settings.read(inifile)
 
-root = settings.get('Filenames', 'root')
+
 curdir=settings.get('Filenames', 'curdir')
 simdir=settings.get('Filenames', 'simdir')
 savedir=settings.get('Filenames', 'savedir')
